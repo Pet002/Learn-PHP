@@ -11,6 +11,7 @@ services:
       - ./php/src:/var/www/html/
     ports:
       - 8000:80
+
   db:
     container_name: db
     image: mysql
@@ -21,4 +22,21 @@ services:
       MYSQL_USER: MYSQL_USER
       MYSQL_PASSWORD: MYSQL_PASSWORD
     ports:
-      - "9906:3306"
+      - "3306:3306"
+
+  db-sql-srv:
+    container_name: db-sql-srv
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      MSSQL_SA_PASSWORD: "Tanachod02"
+      ACCEPT_EULA: "Y"
+    ports:
+      - 1433:1433
+
+  db-postgres:
+    image: "postgres"
+    restart: always
+    ports:
+        - 5432:5432
+    environment:
+        - POSTGRES_PASSWORD=Tanachod02

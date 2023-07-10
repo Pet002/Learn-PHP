@@ -1,5 +1,5 @@
 <?php
-    $host = 'db';
+    $host = 'host.docker.internal';
     $user = 'MYSQL_USER';
     $pass = 'MYSQL_PASSWORD';
     
