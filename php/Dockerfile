@@ -24,9 +24,6 @@ RUN apt-get update && ACCEPT_EULA=Y apt-get install -y \
 # Install the SQL Server extension for PHP
 RUN pecl install sqlsrv pdo_sqlsrv && docker-php-ext-enable sqlsrv pdo_sqlsrv
 
-
-
 # FOR POSTGRESQL
-
 RUN apt-get update && apt-get install -y libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql
