@@ -1,7 +1,9 @@
 FROM php:8.0-apache
-# FOR MYSQL
-RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+# FOR MYSQLi
+RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable mysqli pdo pdo_mysql
 RUN apt-get update && apt-get upgrade -y
+
+
 
 # FOR SQL SERVER
 ENV ACCEPT_EULA=Y
